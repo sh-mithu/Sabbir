@@ -1,0 +1,2 @@
+.root {
+    -fx-selection-bar: linear-gradient(to top, derive(red, -2%) 0%, derive(blue, 50%) 100%);

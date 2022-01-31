@@ -1,0 +1,56 @@
+final Parent[] root = {null};
+        goto_signup.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //Database_controller.changescene(event,"Logged_in.fxml","Log in",null);
+
+                try {
+                    FXMLLoader loader= new FXMLLoader(getClass().getResource("Signup_page.fxml"));
+                    root[0] = loader.load();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("title");
+                stage.setScene(new Scene(root[0], 680, 540));
+                stage.show();
+            }
+        });
+
+
+
+
+
+
+public  static void changescene(ActionEvent event, String fxmlfile, String title, String username){
+        Parent root= null;
+        if(username != null){
+            try {
+                FXMLLoader loader= new FXMLLoader(Database_controller.class.getResource(fxmlfile));
+                root = loader.load();
+                Login_page loginpage= loader.getController();
+                loginpage.setuserinformation(username);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            try {
+                root= FXMLLoader.load(Database_controller.class.getResource(fxmlfile));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+    }
+
+
+
+
+
+
+
+
