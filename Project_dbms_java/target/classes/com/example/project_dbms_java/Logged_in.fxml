@@ -1,15 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.after_login">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.after_login">
    <children>
-      <Button fx:id="Log_out" layoutX="253.0" layoutY="186.0" mnemonicParsing="false" onAction="#Log_out_button" style="-fx-background-color: #ffffff;" text="Logout" textFill="#343694">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Button>
+      <HBox prefHeight="60.0" prefWidth="718.0">
+         <children>
+            <AnchorPane prefHeight="58.0" prefWidth="729.0" style="-fx-background-color: #0D1117;">
+               <children>
+                  <Button layoutX="550.0" layoutY="12.0" mnemonicParsing="false" onAction="#Log_out_button" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: red;" text="Logout     ✕" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="34.0" layoutY="16.0" style="-fx-background-color: #0D1117;" text="Hi" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="user_nametxt" layoutX="58.0" layoutY="16.0" style="-fx-background-color: #0D1117;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="465.0" prefWidth="718.0">
+         <children>
+            <AnchorPane prefHeight="465.0" prefWidth="723.0" style="-fx-background-color: #161b22;">
+               <children>
+                  <AnchorPane layoutX="157.0" layoutY="39.0" prefHeight="340.0" prefWidth="402.0" style="-fx-background-color: #040d21; -fx-background-radius: 15;">
+                     <children>
+                        <Label fx:id="emailtxt" layoutX="181.0" layoutY="49.0" style="-fx-background-color: #040d21;" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="137.0" fitWidth="132.0" layoutX="21.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@loggedin1.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="phonetxt" layoutX="181.0" layoutY="84.0" style="-fx-background-color: #040d21;" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="addresstxt" layoutX="181.0" layoutY="116.0" style="-fx-background-color: #040d21;" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="22.0" layoutY="182.0" prefHeight="130.0" prefWidth="356.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+                           <children>
+                              <Label fx:id="sabbir" layoutX="34.0" layoutY="30.0" style="-fx-background-color: #161b22;" text="lebar" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="23.0" layoutY="412.0" prefHeight="0.5" prefWidth="670.0" style="-fx-background-color: #ffffff;" />
+               </children></AnchorPane>
+         </children>
+      </HBox>
    </children>
-</AnchorPane>
+</VBox>

@@ -2,18 +2,12 @@ package com.example.project_dbms_java;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
-import java.sql.Connection;
 
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class Signup_page implements Initializable {
@@ -22,35 +16,35 @@ public class Signup_page implements Initializable {
     //choice box
     @FXML
     private ChoiceBox<String> choicbox_signup_button;
-    private String[] employee_level= {"admin","genitors","stuffs","workers"};
+    private String[] employee_level= {"Admin","Genitors","Stuffs","Workers"};
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         choicbox_signup_button.getItems().addAll(employee_level);
-        choicbox_signup_button.setOnAction(this::getEmployeelevel_signup);
+        choicbox_signup_button.setOnAction(event -> getEmployeelevel_signup());
     }
     //void signup
-    public String getEmployeelevel_signup(ActionEvent event){
-            String chooseemployee = choicbox_signup_button.getValue();
-            String a = null;
-            if (chooseemployee.equals("Admin")) {
-                a = "admin";
+    public String getEmployeelevel_signup(){
+        String chooseemployee = choicbox_signup_button.getValue();
+        String a = null;
+        if (chooseemployee.equals("Admin")) {
+            a = "admin";
 
-            }
-            else if (chooseemployee.equals("Genitors")) {
-                a = "genitors";
-            }
-            else if (chooseemployee.equals("Stuffs")) {
-                a = "stuffs";
-            }
-            else if (chooseemployee.equals("Workers")) {
-                a = "workers";
-            }
-            return a;
+        }
+        else if (chooseemployee.equals("Genitors")) {
+            a = "genitors";
+        }
+        else if (chooseemployee.equals("Stuffs")) {
+            a = "stuffs";
+        }
+        else if (chooseemployee.equals("Workers")) {
+            a = "workers";
+        }
+        return a;
     }
-/*
- START Import FXML File
-*/
+    /*
+     START Import FXML File
+    */
     @FXML
     private TextField nametxt;
     @FXML
@@ -62,11 +56,7 @@ public class Signup_page implements Initializable {
     @FXML
     private DatePicker date;
     @FXML
-    private CheckBox malecheck;
-    @FXML
-    private CheckBox femalecheck;
-    @FXML
-    private CheckBox othercheck;
+    private TextField gendertxt;
     @FXML
     private TextField nidtxt;
     @FXML
@@ -77,26 +67,81 @@ public class Signup_page implements Initializable {
     private Label invalid_signup;
     @FXML
     public void sign_up_button_handler(ActionEvent event) {
-        String a=getEmployeelevel_signup(event);
+
+
+        String a=getEmployeelevel_signup();
+
+        Date datein=new Date();
         String name=nametxt.getText();
         String email=emailtxt.getText();
+        String pass=passwordtxt.getText();
+        //int phone= Integer.parseInt(phonetxt.getText());
+        //int phone=Integer.valueOf(phonetxt.getText());
+        String phone=phonetxt.getText();
+        LocalDate date_set=date.getValue();
+        String nid=nidtxt.getText();
+        String pre_address=presentaddresstxt.getText();
+        String par_address=permanentaddresstxt.getText();
+        String gender=gendertxt.getText();
+
+         Database_controller controller=new Database_controller();
+        /*String query_loginfo="INSERT INTO `login_information`(`Email`, `Password`, `Designation`) VALUES ('"+email+"','"+pass+"','"+a+"')";
+        controller.save_value("INSERT INTO workers VALUES ("+"'"+name+"'"+","+"'"+email+"'"+","+"'"+pass+"'"+","+"'"+phone+"'"+","+date_set+","+"'"+nid+"'"+","+"'"+gender+"'"+","+"'"+pre_address+"'"+","+"'"+par_address+"'"+","+"'"+a+"'"+");");
+        //controller.save_value(query_loginfo);
+        goto_after_login(event);
+        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText("");
+        alert.show();*/
+
         if (emailtxt.getText().isBlank() || nidtxt.getText().isBlank()||passwordtxt.getText().isBlank()||nametxt.getText().isBlank()){
             invalid_signup.setText("Please Fill up all Information!");
         }
         else if(a.equals("admin")){
-            connetion(a,"Admin",event);
+            String query_allinfo=("INSERT INTO admin VALUES ('"+name+"','"+email+"','"+pass+"','"+phone+"','"+nid+"','"+date_set+"','"+gender+"','"+pre_address+"','"+par_address+"','"+a+"');");
+
+            String query_loginfo="INSERT INTO `login_information`(`Email`, `Password`, `Designation`) VALUES ('"+email+"','"+pass+"','Admin')";
+            controller.save_value(query_allinfo);
+            controller.save_value(query_loginfo);
+            goto_after_login(event);
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("");
+            alert.show();
 
         }
         else if(a.equals("genitors")){
-            connetion(a,"Genitors",event);
+            String query_allinfo=("INSERT INTO genitors VALUES ('"+name+"','"+email+"','"+pass+"','"+phone+"','"+nid+"','"+date_set+"','"+gender+"','"+pre_address+"','"+par_address+"','"+a+"');");
+
+            String query_loginfo="INSERT INTO `login_information`(`Email`, `Password`, `Designation`) VALUES ('"+email+"','"+pass+"','Genitors')";
+            controller.save_value(query_allinfo);
+            controller.save_value(query_loginfo);
+            goto_after_login(event);
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("");
+            alert.show();
         }
         else if(a.equals("stuffs")){
-            connetion(a,"Stuffs",event);
+            String query_allinfo=("INSERT INTO stuffs VALUES ('"+name+"','"+email+"','"+pass+"','"+phone+"','"+nid+"','"+date_set+"','"+gender+"','"+pre_address+"','"+par_address+"','"+a+"');");
+
+            String query_loginfo="INSERT INTO `login_information`(`Email`, `Password`, `Designation`) VALUES ('"+email+"','"+pass+"','Stuffs')";
+            controller.save_value(query_allinfo);
+            controller.save_value(query_loginfo);
+            goto_after_login(event);
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("");
+            alert.show();
         }
         else if(a.equals("workers")){
-            connetion(a,"Workers",event);
+            String query_allinfo=("INSERT INTO workers VALUES ('"+name+"','"+email+"','"+pass+"','"+phone+"','"+nid+"','"+date_set+"','"+gender+"','"+pre_address+"','"+par_address+"','"+a+"');");
+
+            String query_loginfo="INSERT INTO `login_information`(`Email`, `Password`, `Designation`) VALUES ('"+email+"','"+pass+"','"+a+"')";
+            controller.save_value(query_allinfo);
+            controller.save_value(query_loginfo);
+            goto_after_login(event);
+            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("");
+            alert.show();
         }
-        goto_after_login(event);
+
     }
 
     @FXML
@@ -104,41 +149,8 @@ public class Signup_page implements Initializable {
         new after_login().Log_out_button(event);
     }
 
-
-    public void connetion(String a,String des, ActionEvent event){
-     /*   Database_controller connectnew= new Database_controller();
-        Connection connectiondb= connectnew.getDatabaselink();
-        String query= "INSERT INTO `workers`(`full_name`, `email`, `password`, `phone_number`, `date_of_birth`, `nid_number`, `gender`, `present_address`, `permanent_address`, `designation`) VALUES (?,?,?,?,?,?,?,?,?,?);
-    try {
-        invalid_signup.setText("");
-            Statement statement = connectiondb.prepareStatement(query);
-            ResultSet queryresult= statement.executeQuery(query);
-            while(queryresult.next()){
-                if(queryresult.getInt(1)==1){
-                    final Parent[] root = {null};
-                    try {
-                        FXMLLoader loader= new FXMLLoader(getClass().getResource("Logged_in.fxml"));
-                        root[0] = loader.load();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setTitle("Sign Up");
-                    stage.setScene(new Scene(root[0], 680, 540));
-                    stage.show();
-                }
-                else {
-                    invalid_signup.setText("Invalid Login! Please Try again.");
-                }
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }*/
-    }
-
-
     public void goto_after_login(ActionEvent event){
-        new page_open().Open_window(event,"","after_signup.fxml",340, 180);
+        new page_open().Open_window(event,"","after_signup.fxml",717, 523);
     }
 
 }

@@ -27,7 +27,7 @@
                               <Font name="System Bold" size="17.0" />
                           </font>
                       </Label>
-                      <TextField fx:id="user_name_login" layoutX="103.0" layoutY="122.0" prefHeight="34.0" prefWidth="244.0" promptText="Username or Email" />
+                      <TextField fx:id="user_email_login" layoutX="103.0" layoutY="122.0" prefHeight="34.0" prefWidth="244.0" promptText="Username or Email" />
                       <TextField fx:id="user_pass_login" layoutX="104.0" layoutY="166.0" prefHeight="34.0" prefWidth="244.0" promptText="Password" />
                       <Button fx:id="login_button" layoutX="164.0" layoutY="288.0" mnemonicParsing="false" onAction="#loginhandler" prefHeight="30.0" prefWidth="123.0" text="Login">
                           <font>
@@ -45,7 +45,7 @@
                      </font>
                   </Label>
                   <ChoiceBox fx:id="choicbox_login" layoutX="104.0" layoutY="211.0" prefHeight="26.0" prefWidth="244.0" />
-                  <Label layoutX="153.0" layoutY="401.0" text="Not a User?">
+                  <Label layoutX="141.0" layoutY="401.0" text="Not a User?">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -55,31 +55,6 @@
                         <Image url="@fb.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="89.0" layoutY="465.0" text="Shakil Mahmud">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="243.0" layoutY="465.0" text="Hasibul Islam">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="89.0" layoutY="487.0" prefHeight="22.0" prefWidth="103.0" text="Sabbir Hasan">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="243.0" layoutY="487.0" text="Subrina Urmi">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="goto_signup" layoutX="231.0" layoutY="396.0" mnemonicParsing="false" onAction="#signup_handler" style="-fx-background-color: #ffffff;" text="Sign Up" textFill="#7e2b41" underline="true">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
                   <Label fx:id="invalid_login" layoutX="104.0" layoutY="95.0" prefHeight="22.0" prefWidth="244.0" style="-fx-background-color: #ffffff;" textAlignment="CENTER" textFill="#df0c0c">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -88,6 +63,31 @@
                   <Button fx:id="forget_password" layoutX="155.0" layoutY="355.0" mnemonicParsing="false" onAction="#forget_password_handler" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Forget Password?" textAlignment="CENTER" textFill="#7e2b41" underline="true">
                      <font>
                         <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="225.0" layoutY="396.0" mnemonicParsing="false" onAction="#signup_handler" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #ffffff;" text="Create Account" textAlignment="CENTER" textFill="#7e2b41" underline="true">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="89.0" layoutY="452.0" mnemonicParsing="false" onAction="#shakil_fb" style="-fx-background-color: #ffffff;" text="Shakil Mahmud">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="165.0" layoutY="482.0" mnemonicParsing="false" onAction="#sabbir_fb" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" text="Sabbir Hasan Mithu">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="198.0" layoutY="452.0" mnemonicParsing="false" onAction="#hasib_fb" style="-fx-background-color: #ffffff;" text="Hasibul Islam">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="297.0" layoutY="451.0" mnemonicParsing="false" onAction="#subru_fb" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Subrina Urmi">
+                     <font>
+                        <Font size="14.0" />
                      </font>
                   </Button>
                   </children>

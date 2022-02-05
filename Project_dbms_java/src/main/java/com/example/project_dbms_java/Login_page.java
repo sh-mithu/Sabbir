@@ -2,23 +2,24 @@ package com.example.project_dbms_java;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Locale;
 import java.util.ResourceBundle;
+
+
 
 public class Login_page implements Initializable {
     @FXML
@@ -28,7 +29,7 @@ public class Login_page implements Initializable {
     @FXML
     private Button Log_out;
     @FXML
-    private TextField user_name_login;
+    private TextField user_email_login;
     @FXML
     private TextField user_pass_login;
 
@@ -43,7 +44,7 @@ public class Login_page implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         choicbox_login.getItems().addAll(employee_level);
         choicbox_login.setOnAction(event -> getEmployeelevel());
-        }
+    }
     //End choice ebox
 
     public String getEmployeelevel() {
@@ -64,61 +65,62 @@ public class Login_page implements Initializable {
         }
         return a;
     }
+
+
     @FXML
     void signup_handler(ActionEvent event) {
-        /*final Parent[] root = {null};
-
-                try {
-                    FXMLLoader loader= new FXMLLoader(getClass().getResource("signup_page.fxml"));
-                    root[0] = loader.load();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setTitle("Sign Up");
-                stage.setScene(new Scene(root[0], 680, 540));
-                stage.show();*/
         new page_open().Open_window(event,"Sign Up","signup_page.fxml",680, 540);
     }
-    public void loginhandler(ActionEvent event){
+
+
+    public void loginhandler(ActionEvent event) throws SQLException {
         String a=getEmployeelevel();
-        System.out.println(user_name_login.getText());
+        System.out.println(user_email_login.getText());
         System.out.println(user_pass_login.getText());
-        if (user_name_login.getText().isBlank()==false && user_pass_login.getText().isBlank()){
+        if (!user_email_login.getText().isBlank() && user_pass_login.getText().isBlank()){
             invalid_login.setText("Please Enter Password!");
         }
-        else if (user_name_login.getText().isBlank() &&user_pass_login.getText().isBlank()==false){
+        else if (user_email_login.getText().isBlank() && !user_pass_login.getText().isBlank()){
             invalid_login.setText("Please Enter Email!");
         }
-        else if (user_name_login.getText().isBlank() && user_pass_login.getText().isBlank()){
+        else if (user_email_login.getText().isBlank() && user_pass_login.getText().isBlank()){
             invalid_login.setText("Please Enter Email and Password!");
         }
         else if(a.equals("admin")){
-            connetion(a,"Admin",event);
+            connetion("Admin",event);
 
         }
         else if(a.equals("genitors")){
-            connetion(a,"Genitors",event);
+            connetion("Genitors",event);
         }
         else if(a.equals("stuffs")){
-            connetion(a,"Stuffs",event);
+            connetion("Stuffs",event);
         }
         else if(a.equals("workers")){
-            connetion(a,"Workers",event);
+            connetion("Workers",event);
         }
     }
 
-    public void connetion(String a,String des, ActionEvent event){
+    public void connetion(String table, ActionEvent event) throws SQLException{
+
         Database_controller connectnew= new Database_controller();
-        Connection connectiondb= connectnew.getDatabaselink();
-        String query= "SELECT count(1) FROM "+a+" WHERE Email = '" + user_name_login.getText() +"' AND Password = '"+user_pass_login.getText()+"' AND Designation = '"+des+"'";
+        Connection connectiondb= connectnew.login();
+        String query= "SELECT count(1) FROM login_information WHERE Email = '" + user_email_login.getText() +"' AND Password = '"+user_pass_login.getText()+"' AND Designation = '"+table+"'";
+
         try {
             invalid_login.setText("");
+            //Statement statement = connectiondb.createStatement();
             Statement statement = connectiondb.createStatement();
             ResultSet queryresult= statement.executeQuery(query);
             while(queryresult.next()){
                 if(queryresult.getInt(1)==1){
-                    new page_open().Open_window(event,"Loggedin Page","Logged_in.fxml",680, 540);
+                    new after_login().view(table ,user_email_login.getText(), user_pass_login.getText());
+                    new page_open().Open_window(event,"Loggedin Page","Logged_in.fxml",717, 523);
+
+                    /*Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setContentText("");
+                    alert.show();*/
+                    connectiondb.close();
                 }
                 else {
                     invalid_login.setText("Invalid Login! Please Try again.");
@@ -129,8 +131,28 @@ public class Login_page implements Initializable {
         }
     }
 
+
     @FXML
     void forget_password_handler(ActionEvent event){
         new forgetpassword().goto_forget_page(event);
     }
+
+
+    @FXML
+    void shakil_fb(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com/profile.php?id=100036971298466"));
+    }
+    @FXML
+    void hasib_fb(ActionEvent event)throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com/dev.hasibulislam999"));
+    }
+    @FXML
+    void subru_fb(ActionEvent event)throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com/subrina.urmi.37"));
+    }
+    @FXML
+    void sabbir_fb(ActionEvent event)throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com/Tonmoy.0.you"));
+    }
+
 }

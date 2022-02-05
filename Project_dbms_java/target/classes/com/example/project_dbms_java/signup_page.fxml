@@ -1,58 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.Signup_page">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.Signup_page">
    <children>
-      <AnchorPane prefHeight="540.0" prefWidth="440.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane prefHeight="540.0" prefWidth="446.0" style="-fx-background-color: #ffffff;">
          <children>
-            <TextField fx:id="nametxt" layoutX="156.0" layoutY="78.0" prefHeight="26.0" prefWidth="180.0" promptText="Full name" />
-            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="37.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: #ffffff;">
+            <TextField fx:id="nametxt" layoutX="156.0" layoutY="78.0" prefHeight="26.0" prefWidth="180.0" promptText="Full name" AnchorPane.bottomAnchor="435.6" AnchorPane.leftAnchor="156.0" />
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="37.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: #ffffff;">
                <image>
                   <Image url="@sign_logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="30.0" layoutY="82.0" text="Full Name" />
+            <Label layoutX="30.0" layoutY="82.0" text="Full Name" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
             <TextField fx:id="emailtxt" layoutX="156.0" layoutY="113.0" prefHeight="26.0" prefWidth="180.0" promptText="Email" />
             <TextField fx:id="passwordtxt" layoutX="156.0" layoutY="153.0" prefHeight="26.0" prefWidth="180.0" promptText="Password" />
             <TextField fx:id="phonetxt" layoutX="156.0" layoutY="191.0" prefHeight="26.0" prefWidth="180.0" promptText="+01********" />
-            <TextField fx:id="permanentaddresstxt" layoutX="156.0" layoutY="400.0" prefHeight="40.0" prefWidth="180.0" promptText="Permanent Address" />
+            <TextField fx:id="permanentaddresstxt" layoutX="156.0" layoutY="406.0" prefHeight="40.0" prefWidth="180.0" promptText="Permanent Address" />
             <TextField fx:id="nidtxt" layoutX="156.0" layoutY="268.0" prefHeight="26.0" prefWidth="180.0" promptText="7612********" />
-            <TextField fx:id="presentaddresstxt" layoutX="156.0" layoutY="348.0" prefHeight="40.0" prefWidth="180.0" promptText="Present Address" />
-            <Label layoutX="31.0" layoutY="117.0" prefHeight="18.0" prefWidth="41.0" text="Email" />
-            <Label layoutX="30.0" layoutY="157.0" prefHeight="18.0" prefWidth="54.0" text="Password" />
-            <Label layoutX="29.0" layoutY="195.0" prefHeight="18.0" prefWidth="87.0" text="Phone Number" />
+            <TextField fx:id="presentaddresstxt" layoutX="156.0" layoutY="349.0" prefHeight="40.0" prefWidth="180.0" promptText="Present Address" />
+            <Label layoutX="31.0" layoutY="117.0" prefHeight="18.0" prefWidth="41.0" text="Email" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Label layoutX="24.0" layoutY="157.0" prefHeight="18.0" prefWidth="54.0" text="Password" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Label layoutX="20.0" layoutY="195.0" prefHeight="18.0" prefWidth="87.0" text="Phone Number" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
             <DatePicker fx:id="date" layoutX="156.0" layoutY="228.0" prefHeight="26.0" prefWidth="180.0" />
-            <Label layoutX="30.0" layoutY="232.0" prefHeight="18.0" prefWidth="80.0" text="Date of Birth" />
-            <Label layoutX="30.0" layoutY="272.0" prefHeight="18.0" prefWidth="80.0" text="NID Number" />
-            <Label layoutX="29.0" layoutY="359.0" prefHeight="18.0" prefWidth="87.0" text="Present Address" />
-            <Label layoutX="31.0" layoutY="411.0" prefHeight="18.0" prefWidth="107.0" text="Permanent Address" />
-            <Label layoutX="31.0" layoutY="458.0" prefHeight="18.0" prefWidth="107.0" text="Designation" />
-            <ChoiceBox fx:id="choicbox_signup_button" layoutX="156.0" layoutY="454.0" prefHeight="26.0" prefWidth="180.0" />
-            <CheckBox fx:id="malecheck" layoutX="156.0" layoutY="311.0" mnemonicParsing="false" text="Male" />
-            <CheckBox fx:id="femalecheck" layoutX="213.0" layoutY="311.0" mnemonicParsing="false" text="Female" />
-            <CheckBox fx:id="othercheck" layoutX="277.0" layoutY="311.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="58.0" text="Other" />
-            <Label layoutX="30.0" layoutY="311.0" prefHeight="18.0" prefWidth="80.0" text="Gender" />
-            <Button layoutX="52.0" layoutY="500.0" mnemonicParsing="false" onAction="#back_button" text="Back" />
-            <Button layoutX="274.0" layoutY="500.0" mnemonicParsing="false" onAction="#sign_up_button_handler" text="Sign Up" />
+            <Label layoutX="24.0" layoutY="232.0" prefHeight="18.0" prefWidth="80.0" text="Date of Birth" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Label layoutX="24.0" layoutY="272.0" prefHeight="18.0" prefWidth="80.0" text="NID Number" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Label layoutX="20.0" layoutY="360.0" prefHeight="18.0" prefWidth="87.0" text="Present Address" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Label layoutX="23.0" layoutY="417.0" prefHeight="18.0" prefWidth="107.0" text="Permanent Address" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Label layoutX="23.0" layoutY="462.0" prefHeight="18.0" prefWidth="107.0" text="Login Type" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <ChoiceBox fx:id="choicbox_signup_button" layoutX="156.0" layoutY="458.0" prefHeight="26.0" prefWidth="180.0" />
+            <Label layoutX="24.0" layoutY="311.0" prefHeight="18.0" prefWidth="80.0" text="Gender" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" />
+            <Button layoutX="23.0" layoutY="500.0" mnemonicParsing="false" onAction="#back_button" text="Back" />
+            <Button layoutX="277.0" layoutY="500.0" mnemonicParsing="false" onAction="#sign_up_button_handler" text="Sign Up" />
             <Label fx:id="invalid_signup" layoutX="149.0" layoutY="37.0" prefHeight="33.0" prefWidth="194.0" style="-fx-background-color: #ffffff;" textAlignment="CENTER" textFill="#d40808">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <TextField fx:id="gendertxt" layoutX="156.0" layoutY="307.0" prefHeight="26.0" prefWidth="180.0" promptText="Male/Female/Other" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="540.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pic3.jpg" />
          </image>

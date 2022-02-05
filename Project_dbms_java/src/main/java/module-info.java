@@ -10,6 +10,15 @@ module com.example.project_dbms_java {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.sql;
+    requires java.mail;
+    requires activation;
+    requires java.desktop;
+    requires jdk.internal.le;
+
+
+    //requires java.datatransfer;
+    //requires javax.servlet.api;
+
 
     opens com.example.project_dbms_java to javafx.fxml;
     exports com.example.project_dbms_java;
