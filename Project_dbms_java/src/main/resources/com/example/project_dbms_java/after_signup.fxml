@@ -5,22 +5,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.after_signup">
    <children>
       <AnchorPane layoutX="189.0" layoutY="172.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="340.0" style="-fx-background-color: #616D7E; -fx-background-radius: 25;">
          <children>
-            <Label layoutX="125.0" layoutY="34.0" text="Thank You">
+            <Label layoutX="125.0" layoutY="34.0" text="Thank You" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="83.0" layoutY="62.0" text="Sign Up Successfull !">
+            <Label layoutX="78.0" layoutY="69.0" text="Sign Up Successfull !" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="135.0" layoutY="99.0" mnemonicParsing="false" onAction="#sign_up_to_login_handler" prefHeight="37.0" prefWidth="70.0" style="-fx-background-color: #616D7E;" text="Login" textFill="#7e2b41" underline="true">
+            <Button layoutX="136.0" layoutY="106.0" mnemonicParsing="false" onAction="#sign_up_to_login_handler" prefHeight="37.0" prefWidth="70.0" style="-fx-background-color: #fff;" text="Login" textFill="#f88080" underline="true">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

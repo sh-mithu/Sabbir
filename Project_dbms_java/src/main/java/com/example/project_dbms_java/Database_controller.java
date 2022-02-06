@@ -9,7 +9,7 @@ public class Database_controller {
     public Connection getDatabaselink(){
         String databasename ="employee_managment_system";
         String databaseuser ="root";
-        String databasepass ="Sabbir";
+        String databasepass ="";
         String url ="jdbc:mysql://localhost/"+databasename;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -24,9 +24,9 @@ public class Database_controller {
     {
         String databasename ="employee_managment_system";
         String databaseuser ="root";
-        String databasepass ="Sabbir";
+        String databasepass ="";
         String url ="jdbc:mysql://localhost/"+databasename;
-        String s_url="jdbc:mysql://localhost:3306/";
+        String s_url="jdbc:mysql://localhost/";
         try{
             Connection conn = DriverManager.getConnection(s_url, databaseuser, databasepass);
             Statement statement = conn.createStatement();
@@ -46,9 +46,9 @@ public class Database_controller {
         //Connection connection;
         String databasename = "employee_managment_system";
         String databaseuser = "root";
-        String databasepass = "Sabbir";
-        String url = "jdbc:mysql://localhost:3306/" + databasename;
-        String s_url = "jdbc:mysql://localhost:3306/";
+        String databasepass = "";
+        String url = "jdbc:mysql://localhost/" + databasename;
+        String s_url = "jdbc:mysql://localhost/";
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(s_url, databaseuser, databasepass);
@@ -67,7 +67,7 @@ public class Database_controller {
     public void update(String sql) {
         String databasename = "employee_managment_system";
         String databaseuser = "root";
-        String databasepass = "Sabbir";
+        String databasepass = "";
         String url = "jdbc:mysql://localhost/" + databasename;
         String s_url = "jdbc:mysql://localhost/";
         try {

@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class JDBCExample {
     static final String DB_URL = "jdbc:mysql://localhost/employee_managment_system";
     static final String USER = "root";
-    static final String PASS = "Sabbir";
+    static final String PASS = "";
     //static final String QUERY = "SELECT id, first, last, age FROM Registration";
     static final String query1= "SELECT phone_number FROM admin WHERE email = 'sabbir@gmail.com'";
 
