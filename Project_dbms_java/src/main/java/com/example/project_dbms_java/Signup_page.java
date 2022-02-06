@@ -146,7 +146,7 @@ public class Signup_page implements Initializable {
 
     @FXML
     public void back_button(ActionEvent event){
-        new after_login().Log_out_button(event);
+        new page_open().Open_window(event,"","Login_page.fxml",717,523);
     }
 
     public void goto_after_login(ActionEvent event){

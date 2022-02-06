@@ -3,8 +3,8 @@ package com.example.project_dbms_java;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -31,10 +31,14 @@ public class Login_page implements Initializable {
     @FXML
     private TextField user_email_login;
     @FXML
-    private TextField user_pass_login;
+    private PasswordField user_pass_login;
+    //private TextField user_pass_login;
 
     @FXML
     private Label invalid_login;
+
+
+    public static String[] value_set={"","","",""};
     //choice box
     @FXML
     private ChoiceBox<String> choicbox_login;
@@ -88,6 +92,7 @@ public class Login_page implements Initializable {
         }
         else if(a.equals("admin")){
             connetion("Admin",event);
+            //static_label.setText(name);
 
         }
         else if(a.equals("genitors")){
@@ -114,23 +119,49 @@ public class Login_page implements Initializable {
             ResultSet queryresult= statement.executeQuery(query);
             while(queryresult.next()){
                 if(queryresult.getInt(1)==1){
-                    new after_login().view(table ,user_email_login.getText(), user_pass_login.getText());
+                    view(table ,user_email_login.getText(), user_pass_login.getText());
+                    //System.out.println(value_set[0]+"\n"+value_set[1]);
                     new page_open().Open_window(event,"Loggedin Page","Logged_in.fxml",717, 523);
 
                     /*Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setContentText("");
                     alert.show();*/
-                    connectiondb.close();
+
+                   // connectiondb.close();
                 }
                 else {
                     invalid_login.setText("Invalid Login! Please Try again.");
                 }
             }
+            queryresult.close();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
+    public void view(String table ,String user_email_login,String user_pass_login){
+
+        Database_controller connectnew= new Database_controller();
+        Connection connectiondb= connectnew.login();
+        String query1= "SELECT full_name, email, password, phone_number, nid, date_of_birth, gender, present_address, permanent_address, designation FROM "+table+" WHERE email = '"+user_email_login+"' AND password ='"+user_pass_login+"'";
+
+        try {
+            Statement statement = connectiondb.createStatement();
+            ResultSet get_value_from_db = statement.executeQuery(query1);
+            while (get_value_from_db.next()) {
+                String name = get_value_from_db.getString("full_name");
+                String email = get_value_from_db.getString("email");
+                String phone = get_value_from_db.getString("phone_number");
+                String address = get_value_from_db.getString("present_address");
+                value_set[0]=name;
+                value_set[1]=email;
+                value_set[2]=phone;
+                value_set[3]=address;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void forget_password_handler(ActionEvent event){
@@ -153,6 +184,14 @@ public class Login_page implements Initializable {
     @FXML
     void sabbir_fb(ActionEvent event)throws URISyntaxException, IOException {
         Desktop.getDesktop().browse(new URI("https://www.facebook.com/Tonmoy.0.you"));
+    }
+    @FXML
+    void shakil_git(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://github.com/Shakil-Mahmud-Programmer"));
+    }
+    @FXML
+    void sabbir_git(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://github.com/sh-mithu"));
     }
 
 }

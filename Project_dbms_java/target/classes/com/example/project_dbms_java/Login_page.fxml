@@ -1,103 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.Login_page">
-    <children>
-        <AnchorPane prefHeight="523.0" prefWidth="283.0" style="-fx-background-color: #BCC6CC;">
-         <children>
-              <AnchorPane prefHeight="523.0" prefWidth="440.0" style="-fx-background-color: #ffffff;">
-                  <children>
-                      <ImageView fitHeight="47.0" fitWidth="52.0" layoutX="202.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@login.png" />
-                          </image>
-                      </ImageView>
-                      <Label layoutX="164.0" layoutY="61.0" prefHeight="34.0" prefWidth="123.0" text="Member Login">
-                          <font>
-                              <Font name="System Bold" size="17.0" />
-                          </font>
-                      </Label>
-                      <TextField fx:id="user_email_login" layoutX="103.0" layoutY="122.0" prefHeight="34.0" prefWidth="244.0" promptText="Username or Email" />
-                      <TextField fx:id="user_pass_login" layoutX="104.0" layoutY="166.0" prefHeight="34.0" prefWidth="244.0" promptText="Password" />
-                      <Button fx:id="login_button" layoutX="164.0" layoutY="288.0" mnemonicParsing="false" onAction="#loginhandler" prefHeight="30.0" prefWidth="123.0" text="Login">
-                          <font>
-                              <Font name="System Bold" size="14.0" />
-                          </font>
-                      </Button>
-                  <CheckBox layoutX="104.0" layoutY="251.0" mnemonicParsing="false" text="Rememder">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </CheckBox>
-                  <Label layoutX="210.0" layoutY="329.0" prefHeight="26.0" prefWidth="30.0" text="Or">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Label>
-                  <ChoiceBox fx:id="choicbox_login" layoutX="104.0" layoutY="211.0" prefHeight="26.0" prefWidth="244.0" />
-                  <Label layoutX="141.0" layoutY="401.0" text="Not a User?">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="62.0" fitWidth="70.0" layoutX="14.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: #2B60DE;">
-                     <image>
-                        <Image url="@fb.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="invalid_login" layoutX="104.0" layoutY="95.0" prefHeight="22.0" prefWidth="244.0" style="-fx-background-color: #ffffff;" textAlignment="CENTER" textFill="#df0c0c">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="forget_password" layoutX="155.0" layoutY="355.0" mnemonicParsing="false" onAction="#forget_password_handler" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Forget Password?" textAlignment="CENTER" textFill="#7e2b41" underline="true">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="225.0" layoutY="396.0" mnemonicParsing="false" onAction="#signup_handler" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #ffffff;" text="Create Account" textAlignment="CENTER" textFill="#7e2b41" underline="true">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="89.0" layoutY="452.0" mnemonicParsing="false" onAction="#shakil_fb" style="-fx-background-color: #ffffff;" text="Shakil Mahmud">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="165.0" layoutY="482.0" mnemonicParsing="false" onAction="#sabbir_fb" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" text="Sabbir Hasan Mithu">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="198.0" layoutY="452.0" mnemonicParsing="false" onAction="#hasib_fb" style="-fx-background-color: #ffffff;" text="Hasibul Islam">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="297.0" layoutY="451.0" mnemonicParsing="false" onAction="#subru_fb" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Subrina Urmi">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  </children>
-              </AnchorPane>
-         </children>
-        </AnchorPane>
-      <ImageView fitHeight="523.0" fitWidth="294.0" pickOnBounds="true" preserveRatio="true">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.Login_page">
+   <children>
+      <ImageView fitHeight="523.0" fitWidth="717.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pic4.jpg" />
+            <Image url="@them_pic1.png" />
          </image>
       </ImageView>
-    </children>
-</HBox>
+      <AnchorPane layoutX="412.0" prefHeight="523.0" prefWidth="304.0" style="-fx-background-color: #FF914D;">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="68.0" layoutX="114.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="90.0" layoutY="73.0" prefHeight="34.0" prefWidth="123.0" text="Member Login">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="user_email_login" layoutX="30.0" layoutY="143.0" prefHeight="34.0" prefWidth="244.0" promptText="Username or Email" style="-fx-background-color: white; -fx-border-color: #3AA5E2; -fx-cursor: null;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ChoiceBox fx:id="choicbox_login" layoutX="30.0" layoutY="269.0" prefHeight="26.0" prefWidth="244.0" style="-fx-background-color: white; -fx-border-color: #3AA5E2;" />
+            <PasswordField fx:id="user_pass_login" layoutX="30.0" layoutY="194.0" prefHeight="34.0" prefWidth="244.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: #3AA5E2;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="login_button" layoutX="31.0" layoutY="328.0" mnemonicParsing="false" onAction="#loginhandler" prefHeight="34.0" prefWidth="244.0" style="-fx-background-color: white;" text="Login" textFill="#ff914d" AnchorPane.leftAnchor="31.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="forget_password" layoutX="14.0" layoutY="228.0" mnemonicParsing="false" onAction="#forget_password_handler" prefHeight="31.0" prefWidth="152.0" style="-fx-background-color: transparent;" text="Forget Password?" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="260.00000000000006">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="33.0" layoutY="397.0" text="Not a User?" AnchorPane.bottomAnchor="104.60000000000002" AnchorPane.leftAnchor="33.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="112.0" layoutY="390.0" mnemonicParsing="false" onAction="#signup_handler" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #FF914D;" text="Create Account" textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="99.80000000000007">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label fx:id="invalid_login" layoutX="43.0" layoutY="114.0" textFill="#1a90d4" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="61.0" fitWidth="58.0" layoutX="14.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@GitHub-Mark.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="72.0" layoutY="448.0" mnemonicParsing="false" onAction="#shakil_git" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: transparent;" text="Shakil Mahmud" AnchorPane.leftAnchor="72.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="77.0" layoutY="476.0" mnemonicParsing="false" onAction="#sabbir_git" prefHeight="22.0" prefWidth="152.0" style="-fx-background-color: transparent;" text="Sabbir Hasan Mithu" AnchorPane.leftAnchor="72.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="26.0" layoutY="423.0" prefHeight="78.0" prefWidth="366.0" />
+      <Button layoutX="101.0" layoutY="134.0" mnemonicParsing="false" onAction="#sabbir_fb" prefHeight="22.0" prefWidth="152.0" style="-fx-background-color: #ffffff;" text="Sabbir Hasan Mithu" textFill="#ff914d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="101.0" layoutY="164.0" mnemonicParsing="false" onAction="#hasib_fb" prefHeight="22.0" prefWidth="152.0" style="-fx-background-color: #ffffff;" text="Hasibul Islam" textFill="#ff914d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="101.0" layoutY="194.0" mnemonicParsing="false" onAction="#subru_fb" prefHeight="22.0" prefWidth="152.0" style="-fx-background-color: #ffffff;" text="Subrina Urmi" textFill="#ff914d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="shakil_fb" layoutX="101.0" layoutY="104.0" mnemonicParsing="false" onAction="#shakil_fb" prefHeight="22.0" prefWidth="152.0" style="-fx-background-color: white;" text="Shakil Mahmud" textFill="#ff914d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

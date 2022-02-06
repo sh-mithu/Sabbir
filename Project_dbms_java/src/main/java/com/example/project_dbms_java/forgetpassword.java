@@ -19,6 +19,8 @@ public class forgetpassword {
     private TextField c_passwordtxt;
     @FXML
     private Label invalide_code;
+    @FXML
+    private Label invalide_code1;
     public static String[] code_string={"null12","innocent.noreply@gmail.com"};
 
 
@@ -65,11 +67,14 @@ public class forgetpassword {
             }
             else if(passwordtxt.getText().equals(c_passwordtxt.getText())){
                 String query="UPDATE `login_information` SET `Password`='"+passwordtxt.getText()+"' WHERE `Email`='"+code_string[1]+"';";
+                String query1="UPDATE admin SET `Password`='"+passwordtxt.getText()+"' WHERE `Email`='"+code_string[1]+"';";
+
+                new Database_controller().update(query1);
                 new Database_controller().update(query);
                 new page_open().Open_window(event,"Log In","Login_page.fxml",717, 523);
             }
             else{
-                invalide_code.setText("Please, match both passwords!");
+                invalide_code1.setText("Please, match both passwords!");
             }
 
         }

@@ -10,10 +10,9 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("forgetpassword_sentcode.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login_page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 717, 523);
         stage.setTitle("Login Page");
-        //scene.getStylesheets().add("styles.css");
         stage.setScene(scene);
         stage.show();
     }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.after_login">
+   <children>
+      <HBox prefHeight="60.0" prefWidth="718.0">
+         <children>
+            <AnchorPane prefHeight="58.0" prefWidth="729.0" style="-fx-background-color: #0D1117;">
+               <children>
+                  <Button layoutX="550.0" layoutY="12.0" mnemonicParsing="false" onAction="#Log_out_button" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: red;" text="Logout     ✕" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="34.0" layoutY="16.0" style="-fx-background-color: #0D1117;" text="Hi" textFill="WHITE" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="16.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="user_nametxt" layoutX="76.0" layoutY="16.0" prefHeight="26.0" prefWidth="181.0" style="-fx-background-color: #0D1117;" textFill="WHITE" AnchorPane.leftAnchor="79.0" AnchorPane.topAnchor="16.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="465.0" prefWidth="718.0">
+         <children>
+            <AnchorPane prefHeight="465.0" prefWidth="723.0" style="-fx-background-color: #161b22;">
+               <children>
+                  <AnchorPane layoutX="191.0" layoutY="47.0" prefHeight="340.0" prefWidth="402.0" style="-fx-background-color: #040d21; -fx-background-radius: 15;" AnchorPane.bottomAnchor="77.80000000000001">
+                     <children>
+                        <TextField layoutX="93.0" layoutY="90.0" prefHeight="37.0" prefWidth="216.0" promptText="E-mail" style="-fx-border-color: #2E9A43; -fx-background-color: #0D1117;" />
+                        <Button layoutX="93.0" layoutY="155.0" mnemonicParsing="false" onAction="#view_information" prefHeight="30.0" prefWidth="216.0" style="-fx-background-color: #2E9A43;" text="View" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="23.0" layoutY="412.0" prefHeight="0.5" prefWidth="670.0" style="-fx-background-color: #ffffff;" />
+                  <AnchorPane layoutX="14.0" layoutY="47.0" prefHeight="340.0" prefWidth="154.0" style="-fx-background-color: #040d21; -fx-background-radius: 15;" AnchorPane.bottomAnchor="77.80000000000001">
+                     <children>
+                        <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#view_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="View" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="24.0" layoutY="58.0" mnemonicParsing="false" onAction="#update_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="24.0" layoutY="104.0" mnemonicParsing="false" onAction="#insert_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="Insert" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="24.0" layoutY="155.0" mnemonicParsing="false" onAction="#delete_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="20.0" layoutY="207.0" mnemonicParsing="false" onAction="#salary_transfer" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Salary Trasfer" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="20.0" layoutY="258.0" mnemonicParsing="false" onAction="#message_send" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Send Message" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="315.0" layoutY="8.0" prefHeight="30.0" prefWidth="154.0" text="Welcome Admin Page" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="309.0" layoutY="424.0" text="© Team 10^12" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>

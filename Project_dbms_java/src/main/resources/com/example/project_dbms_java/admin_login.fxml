@@ -38,7 +38,7 @@
          <children>
             <AnchorPane prefHeight="465.0" prefWidth="723.0" style="-fx-background-color: #161b22;">
                <children>
-                  <AnchorPane layoutX="157.0" layoutY="39.0" prefHeight="340.0" prefWidth="402.0" style="-fx-background-color: #040d21; -fx-background-radius: 15;">
+                  <AnchorPane layoutX="191.0" layoutY="47.0" prefHeight="340.0" prefWidth="402.0" style="-fx-background-color: #040d21; -fx-background-radius: 15;" AnchorPane.bottomAnchor="77.80000000000001">
                      <children>
                         <Label fx:id="emailtxt" layoutX="181.0" layoutY="49.0" style="-fx-background-color: #040d21;" textFill="WHITE">
                            <font>
@@ -64,12 +64,52 @@
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="23.0" layoutY="412.0" prefHeight="0.5" prefWidth="670.0" style="-fx-background-color: #ffffff;" />
-                  <Label layoutX="309.0" layoutY="424.0" text="© Team 10^12" textFill="WHITE">
+                  <AnchorPane layoutX="14.0" layoutY="47.0" prefHeight="340.0" prefWidth="154.0" style="-fx-background-color: #040d21; -fx-background-radius: 15;" AnchorPane.bottomAnchor="77.80000000000001">
+                     <children>
+                        <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#view_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="View" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="24.0" layoutY="58.0" mnemonicParsing="false" onAction="#update_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="24.0" layoutY="104.0" mnemonicParsing="false" onAction="#insert_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="Insert" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="24.0" layoutY="155.0" mnemonicParsing="false" onAction="#delete_information" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: transparent;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="20.0" layoutY="207.0" mnemonicParsing="false" onAction="#salary_transfer" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Salary Trasfer" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="20.0" layoutY="258.0" mnemonicParsing="false" onAction="#message_send" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: transparent;" text="Send Message" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="315.0" layoutY="8.0" prefHeight="30.0" prefWidth="154.0" text="Welcome Admin Page" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-               </children></AnchorPane>
+                  <Label layoutX="293.0" layoutY="424.0" text="© Team 10^12" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </HBox>
    </children>
