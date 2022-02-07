@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.after_login">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.admin_login">
    <children>
       <HBox prefHeight="60.0" prefWidth="718.0">
          <children>
@@ -103,7 +103,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="293.0" layoutY="424.0" text="© Team 10^12" textFill="WHITE">
+                  <Label layoutX="309.0" layoutY="420.0" text="© Team 10^12" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

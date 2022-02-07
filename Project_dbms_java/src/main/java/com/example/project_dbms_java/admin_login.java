@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class after_login extends Login_page implements Initializable {
+public class admin_login extends Login_page implements Initializable {
     @FXML
     private Label user_nametxt;
     @FXML
@@ -31,4 +31,23 @@ public class after_login extends Login_page implements Initializable {
         addresstxt.setText(value_set[3]);
     }
 
+    public void message_send(ActionEvent event) {
+    }
+
+    public void salary_transfer(ActionEvent event) {
+    }
+
+    public void delete_information(ActionEvent event) {
+        new page_open().Open_window(event,"","admin_info_delete.fxml",717,523);
+    }
+
+    public void insert_information(ActionEvent event) {
+
+    }
+
+    public void update_information(ActionEvent event) {
+    }
+
+    public void view_information(ActionEvent event) {
+    }
 }

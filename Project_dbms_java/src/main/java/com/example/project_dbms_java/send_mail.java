@@ -1,6 +1,5 @@
 package com.example.project_dbms_java;
 
-
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;

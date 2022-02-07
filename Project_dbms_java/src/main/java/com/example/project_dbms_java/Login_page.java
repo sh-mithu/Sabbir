@@ -91,22 +91,20 @@ public class Login_page implements Initializable {
             invalid_login.setText("Please Enter Email and Password!");
         }
         else if(a.equals("admin")){
-            connetion("Admin",event);
-            //static_label.setText(name);
-
+            connetion(event,"Admin");
         }
         else if(a.equals("genitors")){
-            connetion("Genitors",event);
+            connetion(event,"Genitors");
         }
         else if(a.equals("stuffs")){
-            connetion("Stuffs",event);
+            connetion(event,"Stuffs");
         }
         else if(a.equals("workers")){
-            connetion("Workers",event);
+            connetion(event,"Workers");
         }
     }
 
-    public void connetion(String table, ActionEvent event) throws SQLException{
+    public void connetion(ActionEvent event,String table) throws SQLException{
 
         Database_controller connectnew= new Database_controller();
         Connection connectiondb= connectnew.login();
@@ -119,15 +117,18 @@ public class Login_page implements Initializable {
             ResultSet queryresult= statement.executeQuery(query);
             while(queryresult.next()){
                 if(queryresult.getInt(1)==1){
-                    view(table ,user_email_login.getText(), user_pass_login.getText());
+                    view_information(table ,user_email_login.getText(), user_pass_login.getText());
                     //System.out.println(value_set[0]+"\n"+value_set[1]);
-                    new page_open().Open_window(event,"Loggedin Page","Logged_in.fxml",717, 523);
+                    if(table.equals("Admin")){
+                        new page_open().Open_window(event,"Loggedin Page","admin_login.fxml",717, 523);
+                    }else{
+                        new page_open().Open_window(event,"Loggedin Page","Logged_in.fxml",717, 523);
+                    }
+
 
                     /*Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setContentText("");
                     alert.show();*/
-
-                   // connectiondb.close();
                 }
                 else {
                     invalid_login.setText("Invalid Login! Please Try again.");
@@ -138,8 +139,7 @@ public class Login_page implements Initializable {
             e.printStackTrace();
         }
     }
-
-    public void view(String table ,String user_email_login,String user_pass_login){
+    public void view_information(String table ,String user_email_login,String user_pass_login){
 
         Database_controller connectnew= new Database_controller();
         Connection connectiondb= connectnew.login();

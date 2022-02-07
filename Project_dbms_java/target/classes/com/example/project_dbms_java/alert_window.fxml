@@ -5,10 +5,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="279.0" style="-fx-background-color: #616D7E; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.page_open">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="279.0" style="-fx-background-color: #040d21; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_dbms_java.page_open">
    <children>
-      <Label fx:id="alert_txt" layoutX="128.0" layoutY="38.0" prefHeight="27.0" prefWidth="0.0" />
-      <Button layoutX="104.0" layoutY="105.0" mnemonicParsing="false" onAction="#ok_hanlder" prefHeight="37.0" prefWidth="70.0" style="-fx-background-color: #616D7E;" text="Ok" textFill="#7e2b41">
+      <Label fx:id="alert_txt" layoutX="89.0" layoutY="54.0" prefHeight="27.0" prefWidth="101.0" text="Successfull !" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Button layoutX="161.0" layoutY="113.0" mnemonicParsing="false" onAction="#ok_hanlder" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Ok" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="37.0" layoutY="113.0" mnemonicParsing="false" onAction="#cencal" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Cencal" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

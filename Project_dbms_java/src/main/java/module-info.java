@@ -14,6 +14,7 @@ module com.example.project_dbms_java {
     requires activation;
     requires java.desktop;
     requires jdk.internal.le;
+    requires mysql.connector.java;
 
 
     //requires java.datatransfer;

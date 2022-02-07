@@ -25,24 +25,10 @@ public class page_open {
         stage.setScene(new Scene(root[0], sizew, sizeh));
         stage.show();
     }
-    public void Open_window1(ActionEvent event,String title,String file, int sizew,int sizeh){
-        final Parent[] root = {null};
-
-        try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource(file));
-            root[0] = loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle(title);
-        stage.setScene(new Scene(root[0], sizew, sizeh));
-        stage.show();
-    }
     @FXML
     private Label alert_txt;
-    public void alert_window(ActionEvent event,String txt){
-        alert_txt.setText(txt);
+    public void alert_window(){
+        //alert_txt.setText(" Successfull!");
         final Parent[] root = {null};
 
         try {
@@ -62,6 +48,9 @@ public class page_open {
     }
     @FXML
     public void ok_hanlder(ActionEvent event){
+        System.exit(1);
+    }
+    public void cencal(ActionEvent event){
         System.exit(1);
     }
 }
